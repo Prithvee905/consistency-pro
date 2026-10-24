@@ -1,0 +1,39 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Public streak pages. Anyone with the link can read one page,
+    // nobody can list or search them, and only the signed-in (anonymous)
+    // owner can create, change or delete their own page.
+    match /profiles/{slug} {
+      allow get: if true;
+      allow list: if false;
+
+      allow create: if request.auth != null
+        && slug.matches('[a-z0-9]{8,16}')
+        && request.resource.data.owner == request.auth.uid
+        && request.resource.data.keys().hasOnly(['owner', 'name', 'habits', 'updatedAt'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() <= 40
+        && request.resource.data.habits is list
+        && request.resource.data.habits.size() <= 12;
+
+      allow update: if request.auth != null
+        && resource.data.owner == request.auth.uid
+        && request.resource.data.owner == request.auth.uid
+        && request.resource.data.keys().hasOnly(['owner', 'name', 'habits', 'updatedAt'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() <= 40
+        && request.resource.data.habits is list
+        && request.resource.data.habits.size() <= 12;
+
+      allow delete: if request.auth != null && resource.data.owner == request.auth.uid;
+    }
+
+    // Everything else is closed.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+name: consistency
+description: Habit + to-do tracker with alarms, streaks, graphs and shareable story cards. No membership.
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Local, offline-first storage
+  shared_preferences: ^2.2.3
+
+  # Alarms / reminders
+  flutter_local_notifications: ^17.2.4
+  timezone: ^0.9.4
+
+  # Share cards (PNG) to Instagram, WhatsApp, etc.
+  share_plus: ^9.0.0
+  path_provider: ^2.1.4
+
+  # Optional cloud: public share links (anonymous sign-in + Firestore).
+  # The app still works fully offline if Firebase is not configured yet.
+  firebase_core: ^3.4.0
+  firebase_auth: ^5.2.0
+  cloud_firestore: ^5.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

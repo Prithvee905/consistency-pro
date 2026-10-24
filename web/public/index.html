@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consistency: habits that survive a bad day</title>
+  <meta name="description" content="A free habit and to-do app for students. Track gym, running and study, get alarms for your tasks, keep your streak on bad days, and share it on your story. No membership.">
+  <meta name="theme-color" content="#f2f5fa">
+  <meta property="og:title" content="Consistency: habits that survive a bad day">
+  <meta property="og:description" content="Free habit tracker with alarms, streaks and story-ready share cards. No membership.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="/">consistency</a>
+      <nav aria-label="Main">
+        <a href="#features">What it does</a>
+        <a href="/u/demo">Sample page</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="headline">
+        <div>
+          <h1 id="headline">Habits that survive a bad day.</h1>
+          <p class="lead">Track your gym, runs and study hours. Get an alarm for every task on your timetable. Keep your streak alive when a rough day gets in the way. Free, with no membership.</p>
+          <div class="cta" id="cta">
+            <span class="soon" id="soon">Android app coming soon</span>
+            <a class="btn btn-quiet" href="/u/demo">See a sample streak page</a>
+          </div>
+        </div>
+
+        <div class="board" aria-labelledby="board-title">
+          <h2 id="board-title" class="visually-hidden">Try the streak rule</h2>
+          <div class="board-head">
+            <span class="streak-num" id="streak" aria-live="polite">0</span>
+            <span class="streak-unit">day streak</span>
+          </div>
+          <div class="grid intro" id="grid" role="group" aria-label="Your last 12 weeks. Press a square to mark that day done or not."></div>
+          <p class="legend">
+            <span><i class="sw done"></i> Done</span>
+            <span><i class="sw covered"></i> Covered</span>
+            <span><i class="sw"></i> Missed</span>
+          </p>
+          <p class="hint">Tap any square. Miss one day and your streak holds. Miss two in a row and it starts again.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <section class="section" id="features">
+    <div class="wrap">
+      <h2>Made for a student's week.</h2>
+      <dl class="notes">
+        <div class="note">
+          <dt>Weekly goals, not daily</dt>
+          <dd>Set gym for four days a week. The other three are rest days and nothing breaks.</dd>
+        </div>
+        <div class="note">
+          <dt>A bad-day version</dt>
+          <dd>Can't do 45 minutes? Do 10 and it still counts. Ticking a task can log it for you.</dd>
+        </div>
+        <div class="note">
+          <dt>Alarms for your timetable</dt>
+          <dd>Pick the days and the time. Classes, study blocks and gym slots repeat, and the alarm rings when they start.</dd>
+        </div>
+        <div class="note">
+          <dt>Graphs of your own progress</dt>
+          <dd>A bar chart for the last seven days and a calendar for the last sixteen weeks, for every habit.</dd>
+        </div>
+        <div class="note">
+          <dt>Your data stays on your phone</dt>
+          <dd>Habits, tasks and logs are saved on your device. A public page exists only if you choose to create one.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap share">
+      <div>
+        <h2>Your streak, sized for your story.</h2>
+        <p>Open any habit, tap share, and pick a card. It exports at 1080 by 1920, the size Instagram stories use.</p>
+        <p>One option is see-through, so you can place your streak over your own gym or desk photo.</p>
+        <p>Want a link for your bio? Create a public page that shows your habit names, streaks and the days you logged. Nothing else.</p>
+      </div>
+      <div>
+        <div class="story" aria-label="Sample share card">
+          <div class="top-row"><span>consistency</span><span>Aarav</span></div>
+          <div style="font-size:2.6rem;margin-top:auto" aria-hidden="true">🏃</div>
+          <div class="what">Running</div>
+          <div class="big">12</div>
+          <div class="unit">day streak</div>
+          <div class="mini" id="mini" aria-hidden="true"></div>
+          <div class="sample">Sample card</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>No membership. No paywall on your streak.</h2>
+      <p>Streaks, graphs, alarms and sharing are all part of the app from the first day.</p>
+      <div class="cta" id="cta2"></div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">Consistency is a student habit tracker. Your habits stay on your phone unless you share them.</div>
+  </footer>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/streak.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>

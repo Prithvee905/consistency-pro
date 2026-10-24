@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "cleanUrls": true,
+    "rewrites": [
+      { "source": "/u/**", "destination": "/profile.html" }
+    ],
+    "headers": [
+      {
+        "source": "/u/**",
+        "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+      }
+    ]
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  }
+}
